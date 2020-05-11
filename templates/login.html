@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+  <center>
+<div>
+<form method="POST" action="/login/">{% csrf_token %}
+
+    <h1>Login</h1><hr>
+    {% if form is None %}
+    <label><b>Username/Phonenumber :</b></label>
+    <input type="text" placeholder="Username/phonenumber" name="x" required>
+    <label><b>Password :</b></label>
+    <input type="password" placeholder="*******" name="y" required>
+    <button type="submit" >Login</button>
+    {% else %}
+
+    <small>{{ form }}</small>
+    <hr>
+    <label><b>Username/Phonenumber :</b></label>
+    <input type="text" placeholder="Username/phonenumber" name="x" required>
+
+    <label><b>Password :</b></label>
+    <input type="password" placeholder="*******" name="y" required>
+    <button type="submit" >Login</button>
+    {% endif %}
+</form>
+</div>
+</center>
+</body>
+</html>

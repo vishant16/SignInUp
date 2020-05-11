@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+
+
+<body>
+  <center>
+<div>
+<form method="POST" action="/register/">{% csrf_token %}
+
+  <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+      {{ msg }}<hr>
+      <label ><b>Username</b></label>
+      <input type="text" placeholder="Username" value-={{ form.username }} </input>
+
+      <label ><b>Phone No.</b></label>
+      <th><input type="text" placeholder="1234567899" value-={{ form.phonenumber }} </input>
+
+      <label ><b>Password</b></label>
+      <input type="password" placeholder="*******" value-={{ form.password }} </input>
+
+    <button type="submit" >Register</button>
+
+</form>
+</center>
+</div>
+</body>
+
+</html>
